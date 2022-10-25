@@ -1,0 +1,31 @@
+.cart_container{
+    width: 30%;
+}
+.cart_list{
+}
+.cart_list li{
+    display: flex;
+    justify-content: space-between;
+}
+.cart_list img{
+    width: 30px;
+    border-radius: 4px;
+}
+.cart_list .number_products{
+    border-radius: 20px;
+    background: #fff;
+    width: 28px;
+    height: 22px;
+    text-align: center;
+}
+.products_cart{
+    align-items: center;
+    border-bottom: solid 1px #fff;
+    padding-bottom: 3px;
+}
+.number_products span{
+    vertical-align: middle;
+}
+.product_name{
+    color: #fff;
+}

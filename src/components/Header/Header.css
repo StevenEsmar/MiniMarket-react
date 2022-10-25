@@ -1,0 +1,28 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+}
+.navbar li{
+    list-style: none;
+    padding: 12px;
+    cursor: pointer;
+    color: #000000;
+    border-bottom: 2px solid transparent;
+}
+.navbar li:hover{
+    border-bottom: 2px solid #6d47bc;
+}
+.navbar_container{
+    width: 50%;
+}
+.header_page{
+    display: flex;
+    justify-content: space-between;
+    max-height: 60px;
+}
+.logo_market {
+    height: 45px;
+    margin: auto;
+    margin-left: 5px;
+}

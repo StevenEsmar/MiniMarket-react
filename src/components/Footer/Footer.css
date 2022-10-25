@@ -1,0 +1,10 @@
+.footer_container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+.logo_contact {
+    width: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
