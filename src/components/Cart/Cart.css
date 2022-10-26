@@ -1,14 +1,17 @@
 .cart_container{
     width: 30%;
+    text-align: right;
 }
 .cart_list{
 }
-.cart_list li{
+.cart_list .products_cart{
     display: flex;
+    margin-top: 3px;
     justify-content: space-between;
 }
 .cart_list img{
     width: 30px;
+    height: 30px;
     border-radius: 4px;
 }
 .cart_list .number_products{
@@ -28,4 +31,33 @@
 }
 .product_name{
     color: #fff;
+}
+.products_cart button{
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    color: #fff;
+}
+.remove_product{
+    background: #de1f1f;
+}
+.add_product{
+    background: #309d30;
+}
+.total_price{
+    display: flex;
+    justify-content: flex-end;
+}
+.total_price p{
+    margin-left: 5px;
+}
+.p_total{
+    color: #958a8a;
+    font-weight: 600;
+}
+.p_price{
+    color: #ffffffed;
+    font-weight: 600;
 }

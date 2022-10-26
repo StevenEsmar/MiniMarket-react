@@ -1,4 +1,82 @@
+.products_car{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background: rgb(138,22,54);
+    background: linear-gradient(90deg, rgba(138,22,54,1) 0%, rgba(176,45,142,1) 48%, rgba(70,20,145,1) 100%);
+    border-radius: 15px;
+    margin-top: 5px;
+    padding: 15px;
+    max-width: calc(100% - 30px);
+}
 .container_products{
     width: 70%;
     border-right: 2px solid #fff;
+}
+.container_products h2{
+    font-size: 20px;
+    color: #e89fc4;
+    text-align: center;
+}
+.carousel_products{
+    display: flex;
+    overflow: auto;
+    flex-wrap: wrap;
+    max-height: 750px;
+}
+.product_card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100px;
+    background: #9b888873;
+    margin: 3px 10px 10px;
+}
+.product_card:hover {
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 65%);
+}
+.product_tittle{
+    font-size: 14px;
+    margin: 5px 0px;
+}
+.product_price{
+    font-size: 12px;
+    color: #ffffffcf;
+    margin: 5px 0px;
+}
+.product_img{
+    height: 100px;
+    width: 100px;
+}
+.product_description{
+    padding: 2px;
+    text-align: center;
+}
+/* Se cambia estilo del scrollbar */
+::-webkit-scrollbar {
+    height: 7px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #5b1c35;
+    border-radius: 5px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #5b1c3591;
+}
+.btn_add_product{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    cursor: pointer;
+    display: none;
 }

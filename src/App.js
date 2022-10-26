@@ -1,19 +1,18 @@
-import Header from './components/Header/Header';
 import Products from './components/Products/Products';
-import Cart from './components/Cart/Cart';
-import Footer from './components/Footer/Footer';
 import './App.css';
+import {Routes, Route, BrowserRouter} from 'react-router-dom';
+import Information from './components/Information/Information';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <div className="products_car">
-        <Products/>
-        <Cart/>
-      </div>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Products/>}/>
+        <Route exact path="/info" element={<Information/>}/>
+        <Route exact path="/contact" element={<Contact/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
