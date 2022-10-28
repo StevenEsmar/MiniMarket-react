@@ -34,6 +34,7 @@
 .product_name{
     color: #fff;
     width: 48px;
+    text-align: left;
 }
 .products_cart button{
     border: none;
@@ -67,4 +68,10 @@
 }
 .form_wompi{
     text-align: center;
+}
+@media (max-width: 800px){
+    .cart_container {
+        width: auto;
+        text-align: left;
+    }
 }

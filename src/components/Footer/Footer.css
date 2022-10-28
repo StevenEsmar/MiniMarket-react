@@ -8,3 +8,12 @@
     margin-right: 8px;
     vertical-align: middle;
 }
+@media (max-width: 800px){
+    .footer_container {
+        display: block;
+        text-align: center;
+    }
+    .footer_container div{
+        margin: 8px;
+    }
+}

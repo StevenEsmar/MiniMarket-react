@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0px;
+    z-index: 9999;
 }
 .navbar li{
     list-style: none;
@@ -9,24 +10,71 @@
     cursor: pointer;
     color: #000000;
     border-bottom: 2px solid transparent;
+    height: 15px;
 }
 .navbar li:hover{
-    border-bottom: 2px solid #6d47bc;
+    box-shadow: 0px 12px 7px -14px #3334a8;
 }
 .navbar_container{
     width: 50%;
+    padding: 10px 0px;
 }
 .navbar a{
     text-decoration: none;
-    color: #000000;
+    color: #0000008f;
+    font-weight: 600;
 }
 .header_page{
     display: flex;
     justify-content: space-between;
     max-height: 60px;
+    border-radius: 8px;
+    height: 60px;
+    box-shadow: 0px 0px 5px 1px #0000003d;
 }
 .logo_market {
     height: 45px;
     margin: auto;
     margin-left: 5px;
+}
+.hamburger {
+    display: none;
+}
+@media (max-width: 800px){
+    .navbar {
+        margin: 0px;
+        flex-flow: column;
+        background: #4b3cb1;
+        border-radius: 5px;
+        position: absolute;
+        padding-left: 0;
+        right: 12px;
+        margin-top: 32px;
+        text-align: center;
+        box-shadow: 1px 1px 6px 0px #000000;
+    }
+    .navbar a {
+        color: #ffffffc7;
+    }
+    .hamburger {
+        display: block;
+        border: none;
+        border-radius: 4px;
+        height: 30px;
+        width: 42px;
+        margin-top: 10px;
+        background: #ae2c8b;
+        color: #fff;
+        box-shadow: 1px 1px 5px 0px #000000;
+        transition: background-color 0.2s ease-in-out;
+    }
+    .header_page{
+        box-shadow: none;
+    }
+    .navbar{
+        display: none;
+    }
+    .navbar.expanded{
+        display: block;
+    }
 }

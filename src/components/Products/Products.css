@@ -8,6 +8,7 @@
     margin-top: 5px;
     padding: 15px;
     max-width: calc(100% - 30px);
+    box-shadow: 2px 1px 10px 2px #000000;
 }
 .container_products{
     width: 70%;
@@ -33,6 +34,7 @@
 }
 .product_card:hover {
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 65%);
+    cursor: pointer;
 }
 .product_tittle{
     font-size: 14px;
@@ -55,6 +57,7 @@
 /* Se cambia estilo del scrollbar */
 ::-webkit-scrollbar {
     height: 7px;
+    width: 10px;
 }
 /* Track */
 ::-webkit-scrollbar-track {
@@ -71,7 +74,7 @@
     background: #5b1c3591;
 }
 .btn_add_product{
-    position: absolute;
+    position: relative;
     height: 35px;
     width: 100px;
     border: none;
@@ -79,4 +82,39 @@
     cursor: pointer;
     background: #309D30;
     color: #fff;
+}
+.overlay {
+    position: relative;
+    height: 158px;
+    width: 100px;
+    margin-top: -109px;
+    margin-bottom: -49px;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: #00000078;
+}
+.product_card:hover .overlay {
+    opacity: 1;
+}
+.icon {
+    color: #fff;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+@media (max-width: 800px){
+    .products_car{
+        display: block;
+    }
+    .carousel_products {
+        flex-wrap: nowrap;
+    }
+    .container_products {
+        width: auto; 
+        border-right:none;
+    }
 }
