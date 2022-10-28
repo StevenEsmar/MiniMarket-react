@@ -1,42 +1,64 @@
 import './Cart.css';
 import React from 'react';
+import { connect } from 'react-redux';
+import { removeFromCart } from '../Actions/Actions';
 class Cart extends React.Component {
-    render(){
+    render(){   
+        const cartItems=this.props.cart.map((item,index)=>{
+            return(
+                <div className="products_cart" key={index}>
+                    <span className="product_name">{item.item.name}</span>
+                    <img src={item.item.image} className="images_cart" alt="Imagen producto"></img> 
+                    <div>
+                        <button className='remove_product' onClick={ () => this.props.removeFromCart(item)}>Quitar</button>
+                    </div>
+                </div>
+            );
+        });
+        const totalPrice=this.props.cart.reduce((sum, item) => sum + item.item.price, 0);
         return (
             <div className="cart_container">
-                <ul className="cart_list">
-                    <div className="products_cart">
-                        <div className="number_products">
-                            <span>5</span>
-                        </div>
-                        <span className="product_name">Trululu</span>
-                        <img src="https://www.super.com.co/media/TRULULU%20NEON%2012B%20X%2085G.png" className="images_cart" alt="Imagen producto"></img> 
-                        <div>
-                            <button className='add_product'>+</button>
-                            <button className='remove_product'>-</button>
-                        </div>
+                {(this.props.cart.length <= 0) ?
+                <div>
+                <p className='no_products'>
+                    Seleccione un producto del catálogo
+                </p>
+                </div>:
+                <div>
+                    <ul className="cart_list">
+                        {cartItems}  
+                    </ul>
+                    <div className='total_price'>
+                        <p className='p_total'>
+                            Total:
+                        </p> 
+                        <p className='p_price'>
+                            ${totalPrice}
+                        </p>
                     </div>
-                    <div className="products_cart">
-                        <div className="number_products">
-                            <span>1</span>
-                        </div>
-                        <span className="product_name">Cheetos</span>
-                        <img src="https://cheetos.com.mx/include/img/mobile/3_productos/producto_bolsa/poffets_mobile.png" className="images_cart" alt="Imagen producto"></img> 
-                    </div>
-                </ul>
-                <div className='total_price'>
-                    <p className='p_total'>
-                        Total:
-                    </p> 
-                    <p className='p_price'>
-                        $402540
-                    </p>
-                </div>
-                <button>
-                    Paga con Wompi
-                </button>
+                    <form action="https://checkout.wompi.co/p/" method="GET" className='form_wompi'>
+                        <input type="hidden" name="public-key" value="pub_test_Q5yDA9xoKdePzhSGeVe9HAez7HgGORGf" />
+                        <input type="hidden" name="currency" value="COP" />
+                        <input type="hidden" name="amount-in-cents" value={totalPrice+"00"} />
+                        <input type="hidden" name="reference" value="pagoXWompiTest" />
+                    <button type="submit" className='waybox-button'>Pagar con Wompi</button>
+                    </form>
+                </div>}
             </div>
         );
     }
 }
-export default Cart;
+
+function mapStateToProps(state, props) {
+    return {
+        cart: state
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        removeFromCart: item => dispatch(removeFromCart(item))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

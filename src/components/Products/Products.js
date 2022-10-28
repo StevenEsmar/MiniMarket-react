@@ -14,9 +14,7 @@ class Products extends React.Component {
                         <h2>
                             Productos
                         </h2>
-                        <div className="carousel_products">
-                            <Product/>
-                        </div>
+                        <Product/>
                     </div>
                 <Cart/>
                 </div>

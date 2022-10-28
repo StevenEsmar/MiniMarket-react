@@ -46,6 +46,7 @@
 .product_img{
     height: 100px;
     width: 100px;
+    padding-top: 5px;
 }
 .product_description{
     padding: 2px;
@@ -71,12 +72,11 @@
 }
 .btn_add_product{
     position: absolute;
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 100px;
     border: none;
-    border-radius: 20px;
-    margin-top: -10px;
-    margin-left: -10px;
+    border-radius: 8px;
     cursor: pointer;
-    display: none;
+    background: #309D30;
+    color: #fff;
 }

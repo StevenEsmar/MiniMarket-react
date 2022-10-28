@@ -3,6 +3,8 @@
     text-align: right;
 }
 .cart_list{
+    overflow: auto;
+    max-height: 280px;
 }
 .cart_list .products_cart{
     display: flex;
@@ -31,20 +33,19 @@
 }
 .product_name{
     color: #fff;
+    width: 48px;
 }
 .products_cart button{
     border: none;
     cursor: pointer;
-    width: 20px;
+    width: 48px;
+    border-radius: 8px;
     height: 20px;
     margin-right: 4px;
     color: #fff;
 }
 .remove_product{
     background: #de1f1f;
-}
-.add_product{
-    background: #309d30;
 }
 .total_price{
     display: flex;
@@ -60,4 +61,10 @@
 .p_price{
     color: #ffffffed;
     font-weight: 600;
+}
+.no_products{
+    color: #b9aeae;
+}
+.form_wompi{
+    text-align: center;
 }
